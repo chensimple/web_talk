@@ -1,0 +1,34 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>选择聊天室</title>
+</head>
+
+<body>
+    <form action="/login/chat" id="selectRoom" method="post">
+
+        <p>请选择聊天室:</p>
+    </form>
+    <select id="roomlist" form="selectRoom" name="whichroom">
+        <option value="new">新建一个聊天室</option>
+        <!-- 显示在线聊天室列表选项 -->
+        {% for i in rooms %}
+        <option value="add {{i}}">加入聊天室:{{ i }}</option>
+        {% end %}
+    </select>
+    <button type="button" onclick="submit()">确定</button>
+
+</body>
+
+<script>
+    function submit() {
+        var x = document.getElementById("selectRoom");
+        x.submit();
+    }
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>聊天室</title>
+</head>
+
+<body onbeforeunload="history()">
+    <textarea id="content" style="border: 1px solid black; width: 800px; height: 500px; float: left;resize:none;"
+        readonly="readonly"></textarea>
+    <textarea id="userList" style="border: 1px solid black; width: 100px; height: 500px; float: left;resize:none;"
+        readonly="readonly">
+        {{ users }}
+    </textarea>
+
+    <div style="clear: both;">
+        <lable id="roomname" style="display:none">{{ roomname }}</lable>
+        <label id="username" style="display:none">{{ username }}</label>
+        <input tpye="text" id="msg" onkeydown="keyDown(event)" style="width:550px" />
+        <button onclick="wsSend()">send</button>
+        <button onclick="clean()">清除历史消息</button>
+        <button onclick="flush()">刷新消息</button>
+    </div>
+</body>
+
+<script src="/static/chat.js"></script>
+</html>
